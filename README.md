@@ -44,3 +44,14 @@ In TensorFlow, there are built-in functions that carry out the convolution steps
 - tf.contrib.layers.flatten(P): given an input P, this function flattens each example into a 1D vector it while maintaining the batch-size. It returns a flattened tensor with shape [batch_size, k]. You can read the full documentation here.
 
 - tf.contrib.layers.fully_connected(F, num_outputs): given a the flattened input F, it returns the output computed using a fully connected layer. You can read the full documentation here.
+
+Model: CONV2D -> RELU -> MAXPOOL -> CONV2D -> RELU -> MAXPOOL -> FLATTEN -> FULLYCONNECTED. You should use the functions above.
+In detail, we will use the following parameters for all the steps:
+ - Conv2D: stride 1, padding is "SAME"
+ - ReLU
+ - Max pool: Use an 8 by 8 filter size and an 8 by 8 stride, padding is "SAME"
+ - Conv2D: stride 1, padding is "SAME"
+ - ReLU
+ - Max pool: Use a 4 by 4 filter size and a 4 by 4 stride, padding is "SAME"
+ - Flatten the previous output.
+ - FULLYCONNECTED (FC) layer: Apply a fully connected layer without an non-linear activation function. Do not call the softmax here. This will result in 6 neurons in the output layer, which then get passed later to a softmax. In TensorFlow, the softmax and cost function are lumped together into a single function, which you'll call in a different function when computing the cost. 

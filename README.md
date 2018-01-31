@@ -29,3 +29,18 @@ The pooling (POOL) layer reduces the height and width of the input. It helps red
 
 <img width="775" alt="max_pool1" src="https://user-images.githubusercontent.com/30907520/35638763-a44c13ac-067d-11e8-8a35-84845c49b48c.png">
 <img width="757" alt="a_pool" src="https://user-images.githubusercontent.com/30907520/35638775-ad778f1a-067d-11e8-9ffe-b40f07aed584.png">
+
+In TensorFlow, there are built-in functions that carry out the convolution steps for you.
+
+- tf.nn.conv2d(X,W1, strides = [1,s,s,1], padding = 'SAME'): given an input  X
+  and a group of filters  W1
+ , this function convolves  W1
+ 's filters on X. The third input ([1,f,f,1]) represents the strides for each dimension of the input (m, n_H_prev, n_W_prev, n_C_prev). You can read the full documentation here
+
+- tf.nn.max_pool(A, ksize = [1,f,f,1], strides = [1,s,s,1], padding = 'SAME'): given an input A, this function uses a window of size (f, f) and strides of size (s, s) to carry out max pooling over each window. You can read the full documentation here
+
+- tf.nn.relu(Z1): computes the elementwise ReLU of Z1 (which can be any shape). You can read the full documentation here.
+
+- tf.contrib.layers.flatten(P): given an input P, this function flattens each example into a 1D vector it while maintaining the batch-size. It returns a flattened tensor with shape [batch_size, k]. You can read the full documentation here.
+
+- tf.contrib.layers.fully_connected(F, num_outputs): given a the flattened input F, it returns the output computed using a fully connected layer. You can read the full documentation here.

@@ -1,5 +1,10 @@
 # CNN
 
+This repository is a note directory for CNN - which covers the basic ideas of how CNN works.The second part of the notebook is on classic networks, the 3rd about object detection and YOLO Algorithim and the final part is face recognistion and Neural style transfer. 
+
+The Notes are picked from Deep learning course by Andrew NG on Coursera for understanding purposes and reading.  
+For Object detection there are two YOLO papers: Redmon et al., 2016 (https://arxiv.org/abs/1506.02640) and Redmon and Farhadi, 2016 (https://arxiv.org/abs/1612.08242).
+
 We will be implementing the building blocks of a convolutional neural network! Each function we implement will have detailed instructions that will walk us through the steps needed - Convolution functions, including:
 Zero Padding
 Convolve window
